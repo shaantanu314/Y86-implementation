@@ -17,7 +17,7 @@ module new_pc(icode,Cnd,valC,valM,valP,PC);
             end
         4'h7:
             begin
-                assign PC = valC;
+                assign PC = Cnd?valC:valP;
             end
         4'h9:
             begin

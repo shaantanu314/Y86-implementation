@@ -1,0 +1,14 @@
+Done major tasks:
+-> ALU 64 complete
+-> conditional move implemented
+->decode Done
+->fetch Done
+->pc update done
+
+Major:
+->testing individual left (? is necessary?) recomended
+->memory bloc left!!
+
+
+to do list:
+->complete sequential in cpu.v 

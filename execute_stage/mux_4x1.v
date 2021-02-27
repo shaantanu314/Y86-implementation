@@ -1,35 +1,40 @@
 module mux_41(c,ci1,ci2,y0,y1,y2,y3,co,y);
 
-input [1:0]c;
-output reg[31:0]y;
+parameter ADDQ = 4’h0;
+parameter SUBQ = 4’h1;
+parameter ANDQ = 4’h2;
+parameter XORQ = 4’h3;
 
-input [31:0]y0;
-input [31:0]y1;
-input [31:0]y2;
-input [31:0]y3;
+input [3:0]c;
+output reg[63:0]y;
+
+input [63:0]y0;
+input [63:0]y1;
+input [63:0]y2;
+input [63:0]y3;
 input ci1;
 input ci2;
-output reg[0:0]co;
+output reg[2:0]co;
 
 always @(*)
 begin
 case(c)
-2'b00 : begin
+ADDQ : begin
 		 y<=y0;
 		 co<=ci1;
 		end
-2'b01 : begin
+SUBQ : begin
 		 y<=y1;
 		 co<=ci2;
 		end
 
-2'b10 : begin
+ANDQ : begin
          y<=y2;
-		 co<=0;
+		 co<=ci3;
         end
-2'b11 : begin
+XORQ : begin
          y<=y3;
-		 co<=0;
+		 co<=ci4;
          end
 endcase
 

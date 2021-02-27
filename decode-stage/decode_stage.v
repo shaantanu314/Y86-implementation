@@ -57,7 +57,7 @@ module register_file(clk,dstE, dstM, srcA , srcB , valA , valB , valM, valE);
 
 endmodule
 
-module dstE_logic(icode,rB,dstE)
+module dstE_logic(icode,rB,dstE,Cnd,ifun)
 
     parameter RBX = 4’h3;
     parameter RSP = 4’h4;
@@ -66,12 +66,26 @@ module dstE_logic(icode,rB,dstE)
     input[3:0] icode;
     input[3:0] rB;
     output[3:0] dstE;
+    input Cnd;
+    input[3:0] ifun;
 
-    always @(icode,rB)
+    always @(icode,rB,ifun,Cnd)
     begin
         
         case (icode)
-        4'h2 , 4'h3 , 4'h6:
+        4'h2:
+            begin
+                if(ifun == 4h'0)
+                    assign dstE = rB;
+                else
+                    begin
+                        if(Cnd==1'b1)
+                            assign dstE = rB;
+                        else
+                            assign dstE = 4'hF;
+                    end           
+            end
+        4'h3 , 4'h6:
             begin
                 assign dstE = rB;
             end
