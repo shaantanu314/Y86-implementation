@@ -4,11 +4,15 @@ Done major tasks:
 ->decode Done
 ->fetch Done
 ->pc update done
+->memory block done
 
 Major:
 ->testing individual left (? is necessary?) recomended
-->memory bloc left!!
+-> build cpu complete tomorrow probab
+
 
 
 to do list:
+->status reg and signals left
+-> PC block (newPC)
 ->complete sequential in cpu.v 

@@ -1,29 +1,29 @@
 `timescale 1ns / 1ps
-module new_pc(icode,Cnd,valC,valM,valP,PC);
+module new_PC(icode,Cnd,valC,valM,valP,newPC);
 
     input[3:0] icode;
     input Cnd;
     input[31:0] valC;
     input[31:0] valM;
     input[31:0] valP;
-    output[31:0] PC;
+    output[31:0] newPC;
 
     always @(icode,Cnd,valC,valM,valP)
     begin
         case (icode)
         4'h8:
             begin
-                assign PC = valC;
+                assign newPC = valC;
             end
         4'h7:
             begin
-                assign PC = Cnd?valC:valP;
+                assign newPC = Cnd?valC:valP;
             end
         4'h9:
             begin
-                assign PC = valM;
+                assign newPC = valM;
             end
-        default: assign PC = valP;
+        default: assign newPC = valP;
     endcase
 
     end

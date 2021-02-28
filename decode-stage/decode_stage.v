@@ -2,14 +2,14 @@
 module register_file(clk,dstE, dstM, srcA , srcB , valA , valB , valM, valE);
     input clk;
     input [ 3:0] dstE;
-    input [31:0] valE;
+    input [63:0] valE;
     input [ 3:0] dstM;
-    input [31:0] valM;
+    input [63:0] valM;
     input [ 3:0] srcA;
-    output [31:0] valA;
+    output [63:0] valA;
     input [ 3:0] srcB;
-    output [31:0] valB;
-
+    output [63:0] valB63
+    
     parameter RAX = 4’h0;
     parameter RCX = 4’h1;
     parameter RDX = 4’h2;
@@ -27,7 +27,7 @@ module register_file(clk,dstE, dstM, srcA , srcB , valA , valB , valM, valE);
     parameter R14 = 4’he;
     parameter RNONE = 4’hf;
 
-    reg [31:0] reg_mem [14:0];
+    reg [63:0] reg_mem [14:0];
 
 
     always @(posedg clk)
