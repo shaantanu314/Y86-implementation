@@ -1,10 +1,11 @@
 `timescale 1ns / 1ps
 
-module bit_32_xor(a,b,y);
+module bit_64_xor(a,b,y,co);
  
 input [63:0]a;
 input [63:0]b;
 output [63:0]y; 
+output reg[2:0]co;
 
 xor (y[0],a[0],b[0]);
 xor (y[1],a[1],b[1]);
@@ -70,5 +71,13 @@ xor (y[60],a[60],b[60]);
 xor (y[61],a[61],b[61]);
 xor (y[62],a[62],b[62]);
 xor (y[63],a[63],b[63]);
+
+always @(a,b)
+begin
+    co <= 3'b0; 
+    co[1] <= y[63];
+    if(y == 64'd0)
+        co[2] <= 1'b1;
+end
 
 endmodule

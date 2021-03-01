@@ -8,8 +8,13 @@ Done major tasks:
 
 Major:
 ->testing individual left (? is necessary?) recomended
--> build cpu complete tomorrow probab
-
+    Testings status:
+    ->fetch block
+    ->Mem block tested
+    ->execute errors fixed...testing pending
+    PENDING:
+    -decode
+    -pc update LOL
 
 
 to do list:
