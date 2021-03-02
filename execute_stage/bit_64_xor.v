@@ -72,7 +72,7 @@ xor (y[61],a[61],b[61]);
 xor (y[62],a[62],b[62]);
 xor (y[63],a[63],b[63]);
 
-always @(a,b)
+always @(*)
 begin
     co <= 3'b0; 
     co[1] <= y[63];

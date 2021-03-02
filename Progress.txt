@@ -11,7 +11,7 @@ Major:
     Testings status:
     ->fetch block
     ->Mem block tested
-    ->execute errors fixed...testing pending
+    ->execute tested
     PENDING:
     -decode
     -pc update LOL

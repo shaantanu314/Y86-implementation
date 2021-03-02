@@ -74,11 +74,11 @@ module ALU_B_logic(icode,valB,ALU_B);
     always @ (icode , valB )
     begin
         case (icode)
-        4'h2 , 4'h4 :
+        4'h2 , 4'h3 :
             begin
                 ALU_B <= 64'd0;
             end
-        4'h3 , 4'h5 , 4'h6 ,4'h8 ,4'h9 , 4'hA ,4'hB  :
+        4'h4 , 4'h5 , 4'h6 ,4'h8 ,4'h9 , 4'hA ,4'hB  :
             begin
                 ALU_B <= valB;
             end

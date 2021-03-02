@@ -28,12 +28,64 @@ module alu_test;
     initial begin
         $dumpfile("alu_test.vcd");
         $dumpvars(0,alu_test);
+        
+        // OpXX rA rB
+        icode <= 4'h6;
+        ifun  <= 4'h0;
+        valA  <= 64'd30;
+        valB  <= 64'd50;
+        #10;
+        icode <= 4'h6;
+        ifun  <= 4'h1;
+        valA  <= 64'd30;
+        valB  <= 64'd50;
+        #10;
+        icode <= 4'h6;
+        ifun  <= 4'h2;
+        valA  <= 64'd30;
+        valB  <= 64'd50;
+        #10;
+        icode <= 4'h6;
+        ifun  <= 4'h3;
+        valA  <= 64'd30;
+        valB  <= 64'd50;
+        #10;
+
+        // move instructions
+        icode <= 4'h3;
+        ifun  <= 4'h0;
+        valA  <= 64'd30;
+        valB  <= 64'd50;
+        valC  <= 64'd20;
+        #10;
+        icode <= 4'h4;
+        ifun  <= 4'h0;
+        valA  <= 64'd30;
+        valB  <= 64'd50;
+        valC  <= 64'd35;
+        #10;
+        icode <= 4'h5;
+        ifun  <= 4'h0;
+        valA  <= 64'd30;
+        valB  <= 64'd50;
+        valC  <= 64'd70;
+        #10;
+
+        // push pop instructions
+        icode <= 4'hA;
+        ifun  <= 4'h0;
+        valA  <= 64'd30;
+        valB  <= 64'd50;
+        valC  <= 64'd20;
+        #10;
+        icode <= 4'hB;
+        ifun  <= 4'h0;
+        valA  <= 64'd30;
+        valB  <= 64'd50;
+        valC  <= 64'd20;
+        #10;
 
         
-
- 
-
-
         #10 $finish;
    end
     
