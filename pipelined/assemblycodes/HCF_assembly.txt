@@ -1,0 +1,16 @@
+irmovq $56 %rax
+irmovq $76 %rbx
+check:
+    rrmovq %rbx %rcx
+    subq %rax %rbx
+    jg swap
+    jl subtract
+    halt
+subtract:
+    subq %rax %rbx
+    jmp check
+swap:
+    rrmovq %rax %rcx
+    rrmovq %rbx %rax
+    rrmovq %rcx %rbx
+    jmp subtract

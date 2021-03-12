@@ -25,7 +25,7 @@ assign ci1 = 1;
 
 
 bit_64_addsub add1(.co(co1),.ci(ci0) ,.a(ALU_A), .b(ALU_B), .s(y0) );
-bit_64_addsub sub1(.co(co2),.ci(ci1) ,.a(ALU_A), .b(~ALU_B), .s(y1) );
+bit_64_addsub sub1(.co(co2),.ci(ci1) ,.a(ALU_B), .b(~ALU_A), .s(y1) );
 bit_64_and and1(.a(ALU_A), .b(ALU_B), .y(y2) ,.co(co3));
 bit_64_xor xor1(.a(ALU_A), .b(ALU_B), .y(y3) ,.co(co4));
 
@@ -161,7 +161,7 @@ module CND(ifun,outf,Cnd);
         
         4'h4:
         begin
-            if(outf[1]) 
+            if(~outf[2]) 
             Cnd <= 1'b1;
             else
             Cnd <= 1'b0;

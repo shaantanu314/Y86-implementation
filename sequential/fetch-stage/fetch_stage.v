@@ -14,16 +14,16 @@ module align(ibytes, need_regids, rA, rB, valC);
     output [ 3:0] rA;
     output [ 3:0] rB;
     output [63:0] valC;
-    assign rA =  ibytes[7:4] ;
-    assign rB = ibytes[3:0];
-    assign valC = need_regids ? ibytes[71:8] : ibytes[63:0];
+    assign rA =  ibytes[71:68] ;
+    assign rB = ibytes[67:64];
+    assign valC = need_regids ? ibytes[63:0] : ibytes[71:8];
 endmodule
 
 module pc_increment(pc, need_regids, need_valC, valP);
-    input [31:0] pc;
+    input [63:0] pc;
     input need_regids;
     input need_valC;
-    output [31:0] valP;
+    output [63:0] valP;
     assign valP = pc + 1 + 8*need_valC + need_regids;
 endmodule
 

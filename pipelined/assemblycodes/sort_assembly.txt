@@ -1,0 +1,28 @@
+irmovq $1 %r11
+irmovq $1 %rax
+irmovq $0 %rbx
+mrmovq 0(%rbx) %rcx
+irmovq $1 %rdx 
+outloop:
+    subq %rdx %rcx
+    rrmovq %rcx %rdx
+    rrmovq %rax %rbx
+inloop:
+    mrmovq 0(%rbx) %r8
+    mrmovq 1(%rbx) %r9
+    rrmovq %r9 %r10
+    subq %r8 %r10jl .swap
+restore:
+    rmmovq %r8 0(rbx)
+    rmmovq %r9 0(rbx)
+    addq %r11 %rbx
+    subq %r11 %rdx
+    je .inloop
+    subq %r11 %rcx
+    je .outloop
+    halt
+swap:
+    rrmovq %r8 %r10
+    rrmovq %r9 %r8
+    rrmovq %r10 %r9
+    jmp .restore

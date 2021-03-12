@@ -3,27 +3,36 @@ module new_PC(icode,Cnd,valC,valM,valP,newPC);
 
     input[3:0] icode;
     input Cnd;
-    input[31:0] valC;
-    input[31:0] valM;
-    input[31:0] valP;
-    output[31:0] newPC;
+    input[63:0] valC;
+    input[63:0] valM;
+    input[63:0] valP;
+    output reg[63:0] newPC;
 
+    initial
+    begin
+        newPC <= 64'd0;
+    end
+    always @(*)
+    begin
+        newPC <= valP;
+    end
+    
     always @(icode,Cnd,valC,valM,valP)
     begin
         case (icode)
         4'h8:
             begin
-                assign newPC = valC;
+                newPC <= valC;
             end
         4'h7:
             begin
-                assign newPC = Cnd?valC:valP;
+                newPC <= Cnd?valC:valP;
             end
         4'h9:
             begin
-                assign newPC = valM;
+                newPC <= valM;
             end
-        default: assign newPC = valP;
+        default:    newPC <= valP;
     endcase
 
     end

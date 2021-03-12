@@ -1,0 +1,243 @@
+$date
+	Wed Mar  3 21:26:16 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module decode_test $end
+$var wire 1 ! Cnd $end
+$var wire 64 " valB [63:0] $end
+$var wire 64 # valA [63:0] $end
+$var wire 4 $ srcB [3:0] $end
+$var wire 4 % srcA [3:0] $end
+$var wire 4 & dstM [3:0] $end
+$var wire 4 ' dstE [3:0] $end
+$var reg 1 ( clk $end
+$var reg 4 ) icode [3:0] $end
+$var reg 4 * ifun [3:0] $end
+$var reg 4 + rA [3:0] $end
+$var reg 4 , rB [3:0] $end
+$var reg 64 - valE [63:0] $end
+$var reg 64 . valM [63:0] $end
+$scope module dE_l $end
+$var wire 1 ! Cnd $end
+$var wire 4 / icode [3:0] $end
+$var wire 4 0 ifun [3:0] $end
+$var wire 4 1 rB [3:0] $end
+$var reg 4 2 dstE [3:0] $end
+$upscope $end
+$scope module dM_l $end
+$var wire 4 3 icode [3:0] $end
+$var wire 4 4 rA [3:0] $end
+$var reg 4 5 dstM [3:0] $end
+$upscope $end
+$scope module reg_f $end
+$var wire 1 ( clk $end
+$var wire 4 6 dstE [3:0] $end
+$var wire 4 7 dstM [3:0] $end
+$var wire 64 8 valE [63:0] $end
+$var wire 64 9 valM [63:0] $end
+$var wire 4 : srcB [3:0] $end
+$var wire 4 ; srcA [3:0] $end
+$var reg 64 < valA [63:0] $end
+$var reg 64 = valB [63:0] $end
+$upscope $end
+$scope module sA_l $end
+$var wire 4 > icode [3:0] $end
+$var wire 4 ? rA [3:0] $end
+$var reg 4 @ srcA [3:0] $end
+$upscope $end
+$scope module sB_l $end
+$var wire 4 A icode [3:0] $end
+$var wire 4 B rB [3:0] $end
+$var reg 4 C srcB [3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx C
+bx B
+bx A
+bx @
+bx ?
+bx >
+bx =
+bx <
+bx ;
+bx :
+bx 9
+bx 8
+bx 7
+b1111 6
+bx 5
+bx 4
+bx 3
+b1111 2
+bx 1
+bx 0
+bx /
+bx .
+bx -
+bx ,
+bx +
+bx *
+bx )
+0(
+b1111 '
+bx &
+bx %
+bx $
+bx #
+bx "
+z!
+$end
+#10000
+b11 '
+b11 2
+b11 6
+b1111 &
+b1111 5
+b1111 7
+b0 %
+b0 ;
+b0 @
+b1111 $
+b1111 :
+b1111 C
+b100101100 .
+b100101100 9
+b1000001101 -
+b1000001101 8
+b11 ,
+b11 1
+b11 B
+b0 +
+b0 4
+b0 ?
+b0 *
+b0 0
+b11 )
+b11 /
+b11 3
+b11 >
+b11 A
+1(
+#20000
+0(
+#30000
+b1000001101 #
+b1000001101 <
+b0 '
+b0 2
+b0 6
+b11 %
+b11 ;
+b11 @
+b100101100 -
+b100101100 8
+b0 ,
+b0 1
+b0 B
+b11 +
+b11 4
+b11 ?
+1(
+#40000
+0(
+#50000
+b100101100 "
+b100101100 =
+b0 $
+b0 :
+b0 C
+b11111011 -
+b11111011 8
+b10 *
+b10 0
+b110 )
+b110 /
+b110 3
+b110 >
+b110 A
+1(
+#60000
+0(
+#70000
+b11111011 "
+b11111011 =
+b11111100 -
+b11111100 8
+1(
+#80000
+0(
+#90000
+b11111100 "
+b11111100 =
+b11111101 -
+b11111101 8
+1(
+#100000
+0(
+#110000
+b1000001101 "
+b1000001101 =
+b1111 '
+b1111 2
+b1111 6
+b1111 %
+b1111 ;
+b1111 @
+b0 &
+b0 5
+b0 7
+b11 $
+b11 :
+b11 C
+b1111100111 .
+b1111100111 9
+b1111100111 -
+b1111100111 8
+b11 ,
+b11 1
+b11 B
+b0 +
+b0 4
+b0 ?
+b101 )
+b101 /
+b101 3
+b101 >
+b101 A
+1(
+#120000
+0(
+#130000
+b1111100111 #
+b1111100111 <
+b11 '
+b11 2
+b11 6
+b1111 &
+b1111 5
+b1111 7
+b0 %
+b0 ;
+b0 @
+b100101100 .
+b100101100 9
+b11111101 -
+b11111101 8
+b110 )
+b110 /
+b110 3
+b110 >
+b110 A
+1(
+#140000
+0(
+#150000
+1(

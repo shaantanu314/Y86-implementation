@@ -12,12 +12,64 @@ Major:
     ->fetch block
     ->Mem block tested
     ->execute tested
-    PENDING:
-    -decode
-    -pc update LOL
+    -decode tested
 
 
 to do list:
 ->status reg and signals left
--> PC block (newPC)
 ->complete sequential in cpu.v 
+
+Test case 1:
+10
+30
+F0
+00
+00
+00
+00
+00
+00
+00
+14
+30
+F3
+00
+00
+00
+00
+00
+00
+00
+1E
+20
+01
+20
+32
+00
+
+Test case 2:
+10
+30
+F0
+00
+00
+00
+00
+00
+00
+00
+14
+30
+F3
+00
+00
+00
+00
+00
+00
+00
+1E
+60
+03
+00
+
